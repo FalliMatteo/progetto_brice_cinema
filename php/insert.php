@@ -1,9 +1,7 @@
 <?php
+    include "connection.php";
     session_start();
-    $connection = new mysqli("localhost", "root", "", "cinema");
-    if($connection->connect_error){
-        die($connection->connect_error);
-    }
+    $connection = connectMySQL();
     function insertRecensione($connection, $voto, $film, $username){
         if($voto >= 1 && $voto <= 5 && $film >= 1 && $username != ""){
             $sql = "INSERT INTO recensioni (Voto, CodFilm, Username) VALUES('$voto', '$film', '$username')";

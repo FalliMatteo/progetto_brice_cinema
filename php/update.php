@@ -1,9 +1,7 @@
 <?php
+    include "connection.php";
     session_start();
-    $connection = new mysqli("localhost", "root", "", "cinema");
-    if($connection->connect_error){
-        die($connection->connect_error);
-    }
+    $connection = connectMySQL();
     function updateRecensione($connection, $id, $voto){
         if($voto >= 1 && $voto <= 5 && $id >= 1){
             $sql = "UPDATE recensioni SET Voto = '$voto' WHERE IDRecensione = '$id'";

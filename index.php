@@ -1,9 +1,7 @@
 <?php
+    include "php/connection.php";
     session_start();
-    $connection = new mysqli("localhost", "root", "", "cinema");
-    if($connection->connect_error){
-        die($connection->connect_error);
-    }
+    $connection = connectMySQL();
     function getRecensioni($connection){
         try{
             $sql = "SELECT * FROM recensioni JOIN film on recensioni.CodFilm = film.CodFilm";
@@ -68,6 +66,7 @@
             <input type="radio" id="update_input" name="select" value="update" onclick="updateInputs()">
             <label for="update_input"> Update</label><br>
             <?php
+                $color = "";
                 if(isset($_SESSION["color"])){
                     $color = $_SESSION["color"];
                 }
