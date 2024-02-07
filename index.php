@@ -7,11 +7,12 @@
             $sql = "SELECT * FROM recensioni JOIN film on recensioni.CodFilm = film.CodFilm";
             $result = $connection->query($sql);
             if($result->num_rows > 0){
-                $string = "<div id='recensioni' class='container col-xs-12 col-sm-6 col-md-4 col-lg-3'>Recensioni presenti nel database: <br><br><ul>";
+                $string = "<div id='recensioni' class='container col-xs-12 col-sm-6 col-md-4 col-lg-3'>Recensioni presenti nel database: <br><br><table>";
+                $string .= "<tr><th>ID</th><th>Voto</th><th>Film</th><th>Username</th></tr>";
                 while($row = $result->fetch_assoc()){
-                    $string .= ("<li>".$row["IDRecensione"].", ".$row["Voto"].", ".$row["Titolo"].", ".$row["Username"]."</li>");
+                    $string .= ("<tr><td>".$row["IDRecensione"]."</td><td>".$row["Voto"]."</td><td>".$row["Titolo"]."</td><td>".$row["Username"]."</td></tr>");
                 }
-                $string .= "</ul></div>";
+                $string .= "</table></div>";
             } else {
                 $string = "Nessuna recensione presente nel database <br>";
             }
@@ -26,11 +27,12 @@
             $sql = "SELECT * FROM film";
             $result = $connection->query($sql);
             if($result->num_rows > 0){
-                $string = "<div id='film' class='container col-xs-12 col-sm-6 col-md-4 col-lg-3'>Film presenti nel database: <br><br><ul>";
+                $string = "<div id='film' class='container col-xs-12 col-sm-6 col-md-4 col-lg-3'>Film presenti nel database: <br><br><table>";
+                $string .= "<tr><th>ID</th><th>Titolo</th><th>Anno produzione</th><th>Genere</th></tr>";
                 while($row = $result->fetch_assoc()){
-                    $string .= ("<li>".$row["CodFilm"].", ".$row["Titolo"].", ".$row["AnnoProduzione"].", ".$row["Genere"]."</li>");
+                    $string .= ("<tr><td>".$row["CodFilm"]."</td><td>".$row["Titolo"]."</td><td>".$row["AnnoProduzione"]."</td><td>".$row["Genere"]."</td></tr>");
                 }
-                $string .= "</ul></div>";
+                $string .= "</table></div>";
             } else {
                 $string = "Nessun film presente nel database <br>";
             }
