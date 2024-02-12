@@ -2,6 +2,10 @@
     display: none;
 }
 
+.selected{
+  color: #a3481c !important;
+}
+
 body{
     background-repeat: no-repeat;
     background-size: cover;
@@ -209,13 +213,8 @@ input::-webkit-inner-spin-button {
 }
 
 @keyframes onLink {
-    0%{
-        color: #14213d;
-        text-shadow: none;
-    }
     100%{
-        color: #fca311;
-        text-shadow: 0 0 4px #14213d;
+        color: #a3481c;
     }
 }
 
