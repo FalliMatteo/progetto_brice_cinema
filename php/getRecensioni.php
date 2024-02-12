@@ -13,9 +13,8 @@
             } else {
                 $string = "Nessuna recensione presente nel database <br>";
             }
-            $string .= "<br>";
         }catch(Exception $e){
-            $string = $e->getMessage."<br><br>";
+            $string = $e->getMessage."<br>";
         }
         return $string;
     }

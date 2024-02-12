@@ -13,9 +13,8 @@
             } else {
                 $string = "Nessun film presente nel database <br>";
             }
-            $string .= "<br>";
         }catch(Exception $e){
-            $string = $e->getMessage."<br><br>";
+            $string = $e->getMessage."<br>";
         }
         return $string;
     }
