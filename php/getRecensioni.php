@@ -1,8 +1,8 @@
 <?php
     function getRecensioni($connection){
-        try{
-            $sql = "SELECT * FROM recensioni JOIN film on recensioni.CodFilm = film.CodFilm";
-            $result = $connection->query($sql);
+        $sql = "SELECT * FROM recensioni JOIN film on recensioni.CodFilm = film.CodFilm";
+        $result = $connection->query($sql);
+        if($result){
             if($result->num_rows > 0){
                 $string = "Recensioni presenti nel database: <br><br><table>";
                 $string .= "<tr><th>ID</th><th>Voto</th><th>Film</th><th>Username</th></tr>";
@@ -13,7 +13,7 @@
             } else {
                 $string = "Nessuna recensione presente nel database <br>";
             }
-        }catch(Exception $e){
+        }else{
             $string = $e->getMessage."<br>";
         }
         return $string;

@@ -28,7 +28,7 @@
         <h1><img src="img/castagna.png" id="logo"> Brice Cinema</h1>
         <br><br>
     </div>
-    <div id="navbar"><a id="link_film" href=""><b>Film</b></a><a id="link_attori" href=""><b>Attori</b></a></div>
+    <div id="navbar"><a id="link_recensioni" href=""><b>Recensioni</b></a><a id="link_film" href=""><b>Film</b></a><a id="link_proiezioni" href=""><b>Proiezioni</b></a></div>
     <div id="container">
         <br>
         <div class="row" data-masonry='{"percentPosition": true }'>

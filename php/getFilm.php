@@ -1,8 +1,8 @@
 <?php
     function getFilm($connection){
-        try{
-            $sql = "SELECT * FROM film";
-            $result = $connection->query($sql);
+        $sql = "SELECT * FROM film";
+        $result = $connection->query($sql);
+        if($result){
             if($result->num_rows > 0){
                 $string = "Film presenti nel database: <br><br><table>";
                 $string .= "<tr><th class='id_film'>ID</th><th>Titolo</th><th class='anno_produzione_film'>Anno produzione</th><th class='genere_film'>Genere</th></tr>";
@@ -13,7 +13,7 @@
             } else {
                 $string = "Nessun film presente nel database <br>";
             }
-        }catch(Exception $e){
+        }else{
             $string = $e->getMessage."<br>";
         }
         return $string;
