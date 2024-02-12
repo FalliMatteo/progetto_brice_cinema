@@ -4,6 +4,7 @@
 
 body{
     text-align: center;
+    font-family: 'Protest Strike', sans-serif;
 }
 
 .container{
@@ -22,7 +23,7 @@ th, td{
     border: black solid 1px;
 }
 
-#select_div{
+#query_recensioni_div{
     height: 250px;
 }
 
