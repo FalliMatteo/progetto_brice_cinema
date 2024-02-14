@@ -1,10 +1,7 @@
 <?php
     include "../php/connection.php";
-    include "../php/getRecensioni.php";
+    include "../php/getProiezioni.php";
     session_start();
-    $connection = connectMySQL();
-    $recensioni = getRecensioni($connection);
-    $connection->close();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,9 +34,26 @@
         <br>
         <div class="row" data-masonry='{"percentPosition": true }'>
             <br>
-            <div id='recensioni' class='box col-xs-12 col-sm-6 col-md-4 col-lg-3'>
+            <form id="form_proiezioni" action="../php/filterProiezioni.php" method="GET" class="box">
+                <p>Inserisci gli orari di filtraggio</p>
+                <br>
+                <label for="input_ora_inizio">Da:</label>
+                <input type="time" id="input_ora_inizio" name="inizio" placeholder='hh:mm' onfocus="this.placeholder = ''">
+                <label for="input_ora_fine">A:</label>
+                <input type="time" id="input_ora_fine" name="fine" placeholder='hh:mm' onfocus="this.placeholder = ''">
+                <br><br>
+                <button type="submit">Filtra</button>
+            </form>
+            <br>
+            <div id='proiezioni' class='box col-xs-12 col-sm-6 col-md-4 col-lg-3'>
                 <?php
-                    echo $recensioni;
+                    if(isset($_SESSION["proiezioni"])){
+                        echo $_SESSION["proiezioni"];
+                    }else{
+                        $connection = connectMySQL();
+                        echo getProiezioni($connection, "00:00:00", "23:59:59");
+                        $connection->close();
+                    }
                 ?>
             </div>
         </div>
