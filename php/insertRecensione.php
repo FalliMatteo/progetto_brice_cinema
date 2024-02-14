@@ -8,17 +8,17 @@
             $connection->query($sql);
             if($connection->affected_rows > 0){
                 $_SESSION["message"] = "Recensione aggiunta con successo <br><br>";
-                $_SESSION["color"] = "green";
+                $_SESSION["color-1"] = "green";
             }else{
                 $_SESSION["message"] = "Errore: film inesistente <br><br>";
-                $_SESSION["color"] = "red";
+                $_SESSION["color-1"] = "red";
             }
         }else{
             $_SESSION["message"] = "Errore: valori inseriti invalidi <br><br>";
-            $_SESSION["color"] = "red";
+            $_SESSION["color-1"] = "red";
         }
     }
     insertRecensione($connection, $_POST["voto"], $_POST["film"], $_POST["username"]);
     $connection->close();
-    header("Location: ../index.php");
+    header("Location: ../pages/recensioni.php");
 ?>

@@ -14,7 +14,7 @@
                 $string = "Nessuna recensione presente nel database <br>";
             }
         }else{
-            $string = $e->getMessage."<br>";
+            $string = "Errore del server<br>";
         }
         return $string;
     }

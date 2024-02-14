@@ -1,4 +1,5 @@
 <?php
+    session_start();
     function getProiezioni($connection, $after, $before){
         $sql = "SELECT P.CodProiezione, F.Titolo, P.OraProiezione FROM proiezioni as P JOIN film as F on P.CodFilm = F.CodFilm WHERE P.CodSala = 8 AND (P.OraProiezione BETWEEN $after AND $before)";
         $result = $connection->query($sql);
@@ -14,7 +15,7 @@
                 $string = "Nessuna proiezione disponibile <br>";
             }
         }else{
-            $string = $e->getMessage."<br>";
+            $string = "Errore del server<br>";
         }
         return $string;
     }

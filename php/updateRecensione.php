@@ -8,17 +8,17 @@
             $connection->query($sql);
             if($connection->affected_rows > 0){
                 $_SESSION["message"] = "Recensione aggiornata con successo <br><br>";
-                $_SESSION["color"] = "green";
+                $_SESSION["color-1"] = "green";
             }else{
                 $_SESSION["message"] = "Errore: recensione inesistente <br><br>";
-                $_SESSION["color"] = "red";
+                $_SESSION["color-1"] = "red";
             }
         }else{
             $_SESSION["message"] = "Errore: valori inseriti invalidi <br><br>";
-            $_SESSION["color"] = "red";
+            $_SESSION["color-1"] = "red";
         }
     }
     updateRecensione($connection, $_POST["id"], $_POST["voto"]);
     $connection->close();
-    header("Location: ../index.php");
+    header("Location: ../pages/recensioni.php");
 ?>

@@ -1,20 +1,20 @@
 function updateInputs(){
     if(document.getElementById("insert_recensione_input").checked){
-        document.getElementById("form").action = "php/insertRecensione.php";
+        document.getElementById("form_recensioni").action = "../php/insertRecensione.php";
         document.getElementById("id").classList.add("blocked");
         document.getElementById("voto").classList.remove("blocked");
         document.getElementById("film").classList.remove("blocked");
         document.getElementById("username").classList.remove("blocked");
     }
     if(document.getElementById("delete_recensione_input").checked){
-        document.getElementById("form").action = "php/deleteRecensione.php";
+        document.getElementById("form_recensioni").action = "../php/deleteRecensione.php";
         document.getElementById("id").classList.remove("blocked");
         document.getElementById("voto").classList.add("blocked");
         document.getElementById("film").classList.add("blocked");
         document.getElementById("username").classList.add("blocked");
     }
     if(document.getElementById("update_recensione_input").checked){
-        document.getElementById("form").action = "php/updateRecensione.php";
+        document.getElementById("form_recensioni").action = "../php/updateRecensione.php";
         document.getElementById("id").classList.remove("blocked");
         document.getElementById("voto").classList.remove("blocked");
         document.getElementById("film").classList.add("blocked");
