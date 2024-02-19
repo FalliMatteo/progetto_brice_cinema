@@ -1,6 +1,6 @@
 <?php
     function getFilm($connection){
-        $sql = "SELECT * FROM film";
+        $sql = "SELECT F.* FROM film as F JOIN proiezioni as P on F.CodFilm = P.CodFilm WHERE P.CodSala = 8";
         $result = $connection->query($sql);
         if($result){
             if($result->num_rows > 0){

@@ -11,9 +11,9 @@
                 $string = "<p>Attori presenti nel database:</p>";
                 $head = array("ID", "Nome", "Anno di nascita", "Nazione");
             }
-            if($tabella == "proiezioni"){
-                $string = "<p>Proiezioni presenti nel database:</p>";
-                $head = array("ID", "Film", "Sala", "Incasso", "Ora");
+            if($tabella == "film"){
+                $string = "<p>Film presenti nel database:</p>";
+                $head = array("ID", "Titolo", "Anno di produzione", "Nazione", "Regista", "Genere");
             }
             if($tabella == "sale"){
                 $string = "<p>Cinema presenti nel database:</p>";
