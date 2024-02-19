@@ -38,7 +38,7 @@
         <br>
         <div class="row" data-masonry='{"percentPosition": true }'>
             <br>
-            <div id='film' class='box col-xs-12 col-sm-6 col-md-4 col-lg-3'>
+            <div id='film' class='box'>
                 <input type="checkbox" id="id_film_box" onclick="showAttributes()">
                 <label id="id_film_label" for="id_film_box"> Nascondi ID</label><br>
                 <input type="checkbox" id="anno_produzione_film_box" onclick="showAttributes()">

@@ -46,7 +46,7 @@
                 <button type="submit">Filtra</button>
             </form>
             <br>
-            <div id='proiezioni' class='box col-xs-12 col-sm-6 col-md-4 col-lg-3'>
+            <div id='proiezioni' class='box'>
                 <?php
                     if(isset($_SESSION["proiezioni"])){
                         echo $_SESSION["proiezioni"];
