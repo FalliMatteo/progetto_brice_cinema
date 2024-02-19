@@ -39,9 +39,9 @@
                 <p>Inserisci gli orari di filtraggio</p>
                 <br>
                 <label for="input_ora_inizio">Da:</label>
-                <input type="time" id="input_ora_inizio" name="inizio">
+                <input type="time" id="input_ora_inizio" name="inizio" required>
                 <label for="input_ora_fine">A:</label>
-                <input type="time" id="input_ora_fine" name="fine">
+                <input type="time" id="input_ora_fine" name="fine" required>
                 <br><br>
                 <button type="submit">Filtra</button>
             </form>

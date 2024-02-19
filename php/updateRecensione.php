@@ -3,18 +3,13 @@
     session_start();
     $connection = connectMySQL();
     function updateRecensione($connection, $id, $voto){
-        if($voto >= 1 && $voto <= 5 && $id >= 1){
-            $sql = "UPDATE recensioni SET Voto = '$voto' WHERE IDRecensione = '$id'";
-            $connection->query($sql);
-            if($connection->affected_rows > 0){
-                $_SESSION["message"] = "Recensione aggiornata con successo <br><br>";
-                $_SESSION["color-1"] = "green";
-            }else{
-                $_SESSION["message"] = "Errore: recensione inesistente <br><br>";
-                $_SESSION["color-1"] = "red";
-            }
+        $sql = "UPDATE recensioni SET Voto = '$voto' WHERE IDRecensione = '$id'";
+        $connection->query($sql);
+        if($connection->affected_rows > 0){
+            $_SESSION["message"] = "Recensione aggiornata con successo <br><br>";
+            $_SESSION["color-1"] = "green";
         }else{
-            $_SESSION["message"] = "Errore: valori inseriti invalidi <br><br>";
+            $_SESSION["message"] = "Errore: recensione inesistente <br><br>";
             $_SESSION["color-1"] = "red";
         }
     }

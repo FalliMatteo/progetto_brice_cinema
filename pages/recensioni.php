@@ -68,15 +68,15 @@
                     <label id="id_label" for="id_input" class="form_label">ID</label>
                 </div>
                 <div id="voto" class="form_group">
-                    <input type="number" id="voto_input" name="voto" min="1" max="5" placeholder="Voto" class="form_field">
+                    <input type="number" id="voto_input" name="voto" min="1" max="5" placeholder="Voto" class="form_field" required>
                     <label id="voto_label" for="voto_input" class="form_label">Voto</label>
                 </div>
                 <div id="film" class="form_group">
-                    <input type="number" id="film_input" name="film" min="1" placeholder="Codice film" class="form_field">
+                    <input type="number" id="film_input" name="film" min="1" placeholder="Codice film" class="form_field" required>
                     <label id="film_label" for="film_input" class="form_label">Codice film</label>
                 </div>
                 <div id="username" class="form_group">
-                    <input type="text" id="username_input" name="username" placeholder="Username" class="form_field">
+                    <input type="text" id="username_input" name="username" placeholder="Username" class="form_field" required>
                     <label id="username_label" for="username_input" class="form_label">Username</label>
                 </div><br><br>
                 <button type="submit" class="submit">Esegui</button>

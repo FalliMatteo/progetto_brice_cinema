@@ -37,7 +37,7 @@
                 <p>Seleziona la tabella</p>
                 <select id="select_tabella" name="tabella">
                     <option value="attori">Attori</option>
-                    <option value="film">Film</option>
+                    <option value="proiezioni">Proiezioni</option>
                     <option value="sale">Cinema</option>
                 </select>
                 <br><br>
