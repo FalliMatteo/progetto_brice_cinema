@@ -2,6 +2,7 @@
     session_start();
     function getProiezioni($connection, $after, $before){
         if($after < $before){
+            // Il Brice Cinema coincide con la sala 8 del database
             $sql = "SELECT P.CodProiezione, F.Titolo, P.OraProiezione FROM proiezioni as P JOIN film as F on P.CodFilm = F.CodFilm WHERE P.CodSala = 8 AND (P.OraProiezione BETWEEN '$after' AND '$before')";
             $result = $connection->query($sql);
             if($result){

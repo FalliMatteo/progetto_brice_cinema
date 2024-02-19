@@ -31,6 +31,7 @@
             <a id="link_recensioni" href="" class="selected"><b>Recensioni</b></a>
             <a id="link_film" href="../index.php"><b>Film</b></a>
             <a id="link_proiezioni" href="proiezioni.php"><b>Proiezioni</b></a>
+            <a id="link_tabelle" href="tabelle.php"><b>Tabelle</b></a>
         </div>
     </div>
     <div id="container">

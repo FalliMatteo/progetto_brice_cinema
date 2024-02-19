@@ -1,6 +1,4 @@
 <?php
-    include "../php/connection.php";
-    include "../php/getProiezioni.php";
     session_start();
 ?>
 <!DOCTYPE html>
@@ -27,33 +25,31 @@
         <div id="navbar">
             <a id="link_recensioni" href="recensioni.php"><b>Recensioni</b></a>
             <a id="link_film" href="../index.php"><b>Film</b></a>
-            <a id="link_proiezioni" href="" class="selected"><b>Proiezioni</b></a>
-            <a id="link_tabelle" href="tabelle.php"><b>Tabelle</b></a>
+            <a id="link_proiezioni" href="proiezioni.php"><b>Proiezioni</b></a>
+            <a id="link_tabelle" href="" class="selected"><b>Tabelle</b></a>
         </div>
     </div>
     <div id="container">
         <br>
         <div class="row" data-masonry='{"percentPosition": true }'>
             <br>
-            <form id="form_proiezioni" action="../php/filterProiezioni.php" method="GET" class="box">
-                <p>Inserisci gli orari di filtraggio</p>
-                <br>
-                <label for="input_ora_inizio">Da:</label>
-                <input type="time" id="input_ora_inizio" name="inizio">
-                <label for="input_ora_fine">A:</label>
-                <input type="time" id="input_ora_fine" name="fine">
+            <form id="form_tabella" action="../php/getTabella.php" method="GET" class="box">
+                <p>Seleziona la tabella</p>
+                <select id="select_tabella" name="tabella">
+                    <option value="attori">Attori</option>
+                    <option value="film">Film</option>
+                    <option value="sale">Cinema</option>
+                </select>
                 <br><br>
-                <button type="submit">Filtra</button>
+                <button type="submit">Seleziona</button>
             </form>
             <br>
-            <div id='proiezioni' class='box col-xs-12 col-sm-6 col-md-4 col-lg-3'>
+            <div id='tabella' class='box col-xs-12 col-sm-6 col-md-4 col-lg-3'>
                 <?php
-                    if(isset($_SESSION["proiezioni"])){
-                        echo $_SESSION["proiezioni"];
+                    if(isset($_SESSION["tabella"])){
+                        echo $_SESSION["tabella"];
                     }else{
-                        $connection = connectMySQL();
-                        echo getProiezioni($connection, "00:00:00", "23:59:59");
-                        $connection->close();
+                        echo "Tabella non selezionata";
                     }
                 ?>
             </div>

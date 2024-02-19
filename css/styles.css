@@ -225,6 +225,13 @@ input::-webkit-inner-spin-button {
     }
 }
 
+@keyframes onTable {
+  100%{
+    background-color: #fca311;
+    color: #14213d;
+  }
+}
+
 @keyframes onLink {
     100%{
         color: #a3481c;
@@ -251,3 +258,11 @@ a :hover{
 .radio:hover{
     animation: onRadio 0.15s ease-in 0s 1 normal both;
 }
+
+tr:hover{
+    animation: onTable 0s ease-in 0s 1 normal both;
+}
+
+/*option:hover{
+    animation: onButton 0s ease-in 0s 1 normal both;
+}*/
