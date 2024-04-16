@@ -14,7 +14,7 @@
                 $string = "Nessun film presente nel database <br>";
             }
         }else{
-            $string = "Errore del server<br>";
+            $string = "<span style='color: red'>Errore del server</span><br>";
         }
         return $string;
     }

@@ -1,7 +1,11 @@
 <?php
+    session_start();
+    if(!isset($_SESSION["username"])){
+        header("Location: ../index.php");
+    }
+    unset($_SESSION["message_recensioni"]);
     include "../php/connection.php";
     include "../php/getProiezioni.php";
-    session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,9 +30,10 @@
         </div>
         <div id="navbar">
             <a id="link_recensioni" href="recensioni.php"><b>Recensioni</b></a>
-            <a id="link_film" href="../index.php"><b>Film</b></a>
+            <a id="link_film" href="film.php"><b>Film</b></a>
             <a id="link_proiezioni" href="" class="selected"><b>Proiezioni</b></a>
             <a id="link_tabelle" href="tabelle.php"><b>Tabelle</b></a>
+            <a id="link_logout" href="../php/logout.php"><b>Logout</b></a>
         </div>
     </div>
     <div id="container">

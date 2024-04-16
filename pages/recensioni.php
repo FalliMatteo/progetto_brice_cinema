@@ -1,7 +1,10 @@
 <?php
+    session_start();
+    if(!isset($_SESSION["username"])){
+        header("Location: ../index.php");
+    }
     include "../php/connection.php";
     include "../php/getRecensioni.php";
-    session_start();
     $connection = connectMySQL();
     $recensioni = getRecensioni($connection);
     $connection->close();
@@ -29,9 +32,10 @@
         </div>
         <div id="navbar">
             <a id="link_recensioni" href="" class="selected"><b>Recensioni</b></a>
-            <a id="link_film" href="../index.php"><b>Film</b></a>
+            <a id="link_film" href="film.php"><b>Film</b></a>
             <a id="link_proiezioni" href="proiezioni.php"><b>Proiezioni</b></a>
             <a id="link_tabelle" href="tabelle.php"><b>Tabelle</b></a>
+            <a id="link_logout" href="../php/logout.php"><b>Logout</b></a>
         </div>
     </div>
     <div id="container">
@@ -52,12 +56,8 @@
                     <label for="update_recensione_input" class="radio_label">Modificare una recensione</label>
                 </div>
                 <?php
-                    $color = "";
-                    if(isset($_SESSION["color-1"])){
-                        $color = $_SESSION["color-1"];
-                    }
-                    if(isset($_SESSION["message"])){
-                        echo "<br><span style='color: $color'><b>" . $_SESSION["message"] . "</b></span>";
+                    if(isset($_SESSION["message_recensioni"])){
+                        echo $_SESSION["message_recensioni"];
                     }
                 ?>
             </div>
@@ -74,10 +74,6 @@
                 <div id="film" class="form_group">
                     <input type="number" id="film_input" name="film" min="1" placeholder="Codice film" class="form_field" required>
                     <label id="film_label" for="film_input" class="form_label">Codice film</label>
-                </div>
-                <div id="username" class="form_group">
-                    <input type="text" id="username_input" name="username" placeholder="Username" class="form_field" required>
-                    <label id="username_label" for="username_input" class="form_label">Username</label>
                 </div><br><br>
                 <button type="submit" class="submit">Esegui</button>
             </form>

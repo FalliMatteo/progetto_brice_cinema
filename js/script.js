@@ -7,8 +7,6 @@ function updateInputs(){
         document.getElementById("voto_input").setAttribute("required", true);
         document.getElementById("film").classList.remove("blocked");
         document.getElementById("film_input").setAttribute("required", true);
-        document.getElementById("username").classList.remove("blocked");
-        document.getElementById("username_input").setAttribute("required", true);
     }
     if(document.getElementById("delete_recensione_input").checked){
         document.getElementById("form_recensioni").action = "../php/deleteRecensione.php";
@@ -18,8 +16,6 @@ function updateInputs(){
         document.getElementById("voto_input").removeAttribute("required");
         document.getElementById("film").classList.add("blocked");
         document.getElementById("film_input").removeAttribute("required");
-        document.getElementById("username").classList.add("blocked");
-        document.getElementById("username_input").removeAttribute("required");
     }
     if(document.getElementById("update_recensione_input").checked){
         document.getElementById("form_recensioni").action = "../php/updateRecensione.php";
@@ -29,10 +25,9 @@ function updateInputs(){
         document.getElementById("voto_input").setAttribute("required", true);
         document.getElementById("film").classList.add("blocked");
         document.getElementById("film_input").removeAttribute("required");
-        document.getElementById("username").classList.add("blocked");
-        document.getElementById("username_input").removeAttribute("required");
     }
 }
+
 
 function showAttributes(){
     let attributes = document.getElementsByClassName("id_film");

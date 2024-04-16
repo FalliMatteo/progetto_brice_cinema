@@ -1,8 +1,8 @@
 <?php
+    session_start();
     include "connection.php";
     include "getProiezioni.php";
     $connection = connectMySQL();
-    session_start();
     $after = $_GET["inizio"];
     $before = $_GET["fine"];
     $_SESSION["proiezioni"] = getProiezioni($connection, $after, $before);

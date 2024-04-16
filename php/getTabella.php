@@ -1,6 +1,6 @@
 <?php
-    include "connection.php";
     session_start();
+    include "connection.php";
     $connection = connectMySQL();
     $tabella = $_GET["tabella"];
     $sql = "SELECT * FROM $tabella";

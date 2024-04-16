@@ -3,7 +3,12 @@
     if(!isset($_SESSION["username"])){
         header("Location: ../index.php");
     }
+    include "../php/connection.php";
+    include "../php/getFilm.php";
     unset($_SESSION["message_recensioni"]);
+    $connection = connectMySQL();
+    $film = getFilm($connection);
+    $connection->close();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,9 +33,9 @@
         </div>
         <div id="navbar">
             <a id="link_recensioni" href="recensioni.php"><b>Recensioni</b></a>
-            <a id="link_film" href="film.php"><b>Film</b></a>
+            <a id="link_film" href="" class="selected"><b>Film</b></a>
             <a id="link_proiezioni" href="proiezioni.php"><b>Proiezioni</b></a>
-            <a id="link_tabelle" href="" class="selected"><b>Tabelle</b></a>
+            <a id="link_tabelle" href="tabelle.php"><b>Tabelle</b></a>
             <a id="link_logout" href="../php/logout.php"><b>Logout</b></a>
         </div>
     </div>
@@ -38,24 +43,15 @@
         <br>
         <div class="row" data-masonry='{"percentPosition": true }'>
             <br>
-            <form id="form_tabella" action="../php/getTabella.php" method="GET" class="box">
-                <p>Seleziona la tabella</p>
-                <select id="select_tabella" name="tabella">
-                    <option value="attori">Attori</option>
-                    <option value="film">Film</option>
-                    <option value="sale">Cinema</option>
-                </select>
-                <br><br>
-                <button type="submit">Seleziona</button>
-            </form>
-            <br>
-            <div id='tabella' class='box'>
+            <div id='film' class='box'>
+                <input type="checkbox" id="id_film_box" onclick="showAttributes()">
+                <label id="id_film_label" for="id_film_box"> Nascondi ID</label><br>
+                <input type="checkbox" id="anno_produzione_film_box" onclick="showAttributes()">
+                <label id="anno_produzione_film_label" for="anno_produzione_film_box"> Nascondi anno di produzione</label><br>
+                <input type="checkbox" id="genere_film_box" onclick="showAttributes()">
+                <label id="genere_film_label" for="genere_film_box"> Nascondi genere</label><br><br>
                 <?php
-                    if(isset($_SESSION["tabella"])){
-                        echo $_SESSION["tabella"];
-                    }else{
-                        echo "Tabella non selezionata";
-                    }
+                    echo $film;
                 ?>
             </div>
         </div>

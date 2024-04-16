@@ -1,19 +1,16 @@
 <?php
-    include "connection.php";
     session_start();
+    include "connection.php";
     $connection = connectMySQL();
-    function updateRecensione($connection, $id, $voto){
-        $sql = "UPDATE recensioni SET Voto = '$voto' WHERE IDRecensione = '$id'";
-        $connection->query($sql);
-        if($connection->affected_rows > 0){
-            $_SESSION["message"] = "Recensione aggiornata con successo <br><br>";
-            $_SESSION["color-1"] = "green";
-        }else{
-            $_SESSION["message"] = "Errore: recensione inesistente <br><br>";
-            $_SESSION["color-1"] = "red";
-        }
+    $id = $_POST["id"];
+    $voto = $_POST["voto"];
+    $sql = "UPDATE recensioni SET Voto = '$voto' WHERE IDRecensione = $id";
+    $connection->query($sql);
+    if($connection->affected_rows > 0){
+        $_SESSION["message_recensioni"] = "<br><p style='color: green'><b>Recensione aggiornata con successo</b></p>";
+    }else{
+        $_SESSION["message_recensioni"] = "<br><p style='color: red'><b>Errore: recensione inesistente</b></p>";
     }
-    updateRecensione($connection, $_POST["id"], $_POST["voto"]);
     $connection->close();
     header("Location: ../pages/recensioni.php");
 ?>
