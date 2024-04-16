@@ -6,6 +6,12 @@
   color: #a3481c !important;
 }
 
+.message {
+  padding-top: 0.5em;
+  margin-left: 1em;
+  margin-right: 1.2em;
+}
+
 body{
     background-repeat: no-repeat;
     background-size: cover;
@@ -97,12 +103,8 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-/*FORM RECENSIONI*/
-
 .form_group {
-    position: relative;
     padding: 15px 0 0;
-    margin-top: 10px;
 }
   
 .form_field {
@@ -115,55 +117,18 @@ input::-webkit-inner-spin-button {
     color: #14213d;
     padding: 7px 0;
     background: transparent;
-    transition: border-color 0.2s;
-  
-    &::placeholder {
-      color: transparent;
-    }
-  
-    &:placeholder-shown ~ .form_label {
-      font-size: 1rem;
-      cursor: text;
-      top: 20px;
-    }
 }
-  
-.form_label {
-    position: absolute;
-    top: 0;
-    display: block;
-    transition: 0.2s;
-    font-size: 1rem;
-    color: #14213d;
-}
-  
+
 .form_field:focus {
-    ~ .form_label {
-      position: absolute;
-      top: 0;
-      display: block;
-      transition: 0.2s;
-      font-size: 1rem;
-      color: #fca311;
-      font-weight:700;    
-    }
-    padding-bottom: 6px;  
-    font-weight: 700;
-    border-width: 3px;
-    border-image: linear-gradient(to right, #fca311, #fca311);
-    border-image-slice: 1;
+  border-bottom: 2px solid #fca311;
+  color: #fca311;
 }
-
-.form_field{
-    &:required,&:invalid { box-shadow:none; }
-}
-
-/* RADIO BUTTON*/
 
 .radio {
-    margin: 0.5rem;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-right: 1.5em;
     input[type="radio"] {
-      position: absolute;
       opacity: 0;
       + .radio_label {
         &:before {
@@ -174,7 +139,6 @@ input::-webkit-inner-spin-button {
           display: inline-block;
           width: 1em;
           height: 1em;
-          position: relative;
           top: 2px;
           margin-right: 0.5em;
           vertical-align: top;

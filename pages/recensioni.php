@@ -42,7 +42,7 @@
         <br>
         <div class="row" data-masonry='{"percentPosition": true }'>
             <div id="query_recensioni_div" class="box">
-                <p>Che cosa vuoi fare?</p>
+                <p style="margin-left: 1em">Che cosa vuoi fare?</p>
                 <div class="radio">
                     <input type="radio" id="insert_recensione_input" name="query_recensioni" value="insert_recensione" onclick="updateInputs()" checked>
                     <label for="insert_recensione_input" class="radio_label">Inserire una recensione</label>
@@ -55,25 +55,24 @@
                     <input type="radio" id="update_recensione_input" name="query_recensioni" value="update_recensione" onclick="updateInputs()">
                     <label for="update_recensione_input" class="radio_label">Modificare una recensione</label>
                 </div>
+                <div class="message">
                 <?php
                     if(isset($_SESSION["message_recensioni"])){
                         echo $_SESSION["message_recensioni"];
                     }
                 ?>
+                </div>
             </div>
             <br>
             <form id="form_recensioni" action="../php/insertRecensione.php" method="post" class="box">
                 <div id="id" class="blocked form_group">
                     <input type="number" id="id_input" name="id" min="1" placeholder="ID" class="form_field">
-                    <label id="id_label" for="id_input" class="form_label">ID</label>
                 </div>
                 <div id="voto" class="form_group">
                     <input type="number" id="voto_input" name="voto" min="1" max="5" placeholder="Voto" class="form_field" required>
-                    <label id="voto_label" for="voto_input" class="form_label">Voto</label>
                 </div>
                 <div id="film" class="form_group">
                     <input type="number" id="film_input" name="film" min="1" placeholder="Codice film" class="form_field" required>
-                    <label id="film_label" for="film_input" class="form_label">Codice film</label>
                 </div><br><br>
                 <button type="submit" class="submit">Esegui</button>
             </form>
