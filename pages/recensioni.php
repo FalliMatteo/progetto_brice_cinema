@@ -42,7 +42,7 @@
         <br>
         <div class="row" data-masonry='{"percentPosition": true }'>
             <div id="query_recensioni_div" class="box">
-                <p style="margin-left: 1em">Che cosa vuoi fare?</p>
+                <p style="margin-left: 1em; margin-right: 6em">Che cosa vuoi fare?</p>
                 <div class="radio">
                     <input type="radio" id="insert_recensione_input" name="query_recensioni" value="insert_recensione" onclick="updateInputs()" checked>
                     <label for="insert_recensione_input" class="radio_label">Inserire una recensione</label>
