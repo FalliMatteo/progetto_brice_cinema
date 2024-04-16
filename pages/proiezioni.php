@@ -42,7 +42,6 @@
             <br>
             <form id="form_proiezioni" action="../php/filterProiezioni.php" method="GET" class="box">
                 <p>Inserisci gli orari di filtraggio</p>
-                <br>
                 <label for="input_ora_inizio">Da:</label>
                 <input type="time" id="input_ora_inizio" name="inizio" required>
                 <label for="input_ora_fine">A:</label>

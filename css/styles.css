@@ -97,6 +97,8 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
+/*FORM RECENSIONI*/
+
 .form_group {
     position: relative;
     padding: 15px 0 0;
@@ -155,6 +157,8 @@ input::-webkit-inner-spin-button {
 .form_field{
     &:required,&:invalid { box-shadow:none; }
 }
+
+/* RADIO BUTTON*/
 
 .radio {
     margin: 0.5rem;
