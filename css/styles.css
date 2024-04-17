@@ -1,3 +1,24 @@
+.access_page{
+  margin-top: 15em;
+}
+
+#title > h2 {
+  margin-top: 1em;
+}
+
+.access_form {
+  width: 20em !important;
+}
+
+.access_button {
+  margin-top: 3em;
+}
+
+.access_page > a{
+  text-decoration: none;
+  color: #14213d;
+}
+
 .blocked{
     display: none;
 }
@@ -6,7 +27,7 @@
   color: #a3481c !important;
 }
 
-.message {
+.message{
   padding-top: 0.5em;
   margin-left: 1em;
   margin-right: 1.2em;
@@ -103,11 +124,11 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-.form_group {
+.input_group {
     padding: 15px 0 0;
 }
   
-.form_field {
+.input_field {
     font-family: inherit;
     width: 100%;
     border: 0;
@@ -119,9 +140,14 @@ input::-webkit-inner-spin-button {
     background: transparent;
 }
 
-.form_field:focus {
+.input_field:focus {
   border-bottom: 2px solid #fca311;
   color: #fca311;
+  
+}
+
+.input_field:focus::placeholder{
+  color:#fca311;
 }
 
 .radio {
@@ -200,27 +226,24 @@ input::-webkit-inner-spin-button {
   }
 }
 
+@keyframes onRadio {
+  0%{
+      color: #14213d;
+  }
+  100%{
+      color: #fca311;
+  }
+}
+
 @keyframes onLink {
     100%{
         color: #a3481c;
     }
 }
 
-@keyframes onRadio {
-    0%{
-        color: #14213d;
-    }
-    100%{
-        color: #fca311;
-    }
-}
 
 button:hover{
     animation: onButton 0.15s ease-in 0s 1 normal both;
-}
-
-a :hover{
-    animation: onLink 0.15s ease-in 0s 1 normal both;
 }
 
 .radio:hover{

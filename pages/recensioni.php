@@ -65,14 +65,14 @@
             </div>
             <br>
             <form id="form_recensioni" action="../php/insertRecensione.php" method="post" class="box">
-                <div id="id" class="blocked form_group">
-                    <input type="number" id="id_input" name="id" min="1" placeholder="ID" class="form_field">
+                <div id="id" class="blocked input_group">
+                    <input type="number" id="id_input" name="id" min="1" placeholder="ID" class="input_field">
                 </div>
-                <div id="voto" class="form_group">
-                    <input type="number" id="voto_input" name="voto" min="1" max="5" placeholder="Voto" class="form_field" required>
+                <div id="voto" class="input_group">
+                    <input type="number" id="voto_input" name="voto" min="1" max="5" placeholder="Voto" class="input_field" required>
                 </div>
-                <div id="film" class="form_group">
-                    <input type="number" id="film_input" name="film" min="1" placeholder="Codice film" class="form_field" required>
+                <div id="film" class="input_group">
+                    <input type="number" id="film_input" name="film" min="1" placeholder="Codice film" class="input_field" required>
                 </div><br><br>
                 <button type="submit" class="submit">Esegui</button>
             </form>
