@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="../css/styles.css">
     <title>Brice Cinema</title>
 </head>
-<body background="../img/sfondo.png">
+<body background="../img/sfondo3.png">
     <div id="head">
         <div id="title">
             <br><br>
